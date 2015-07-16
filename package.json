@@ -1,0 +1,14 @@
+{
+  "name": "authenticator",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "4.x",
+    "body-parser": "~1.0.0",
+    "morgan": "latest",
+    "mongoose": "3.8.8",
+    "jsonwebtoken": "0.4.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

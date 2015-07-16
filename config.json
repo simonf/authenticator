@@ -1,0 +1,6 @@
+{
+"mongo_url": "mongodb://auth:auth@localhost/auth",
+"log_level": "dev",
+"jwt_secret": "awss09874lfssdkjw.%aw234;lpxw",
+"expiry_interval": 300000
+}
