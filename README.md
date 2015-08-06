@@ -1,3 +1,6 @@
+# Caution
+Owing to a CORS bug in Firefox, this service only works in Chrome.
+
 # Database
 
 A MongoDB called "auth" holds the list of permitted users. User objects are structured as:
