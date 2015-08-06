@@ -20,13 +20,14 @@ app.use(bodyParser.json());
 app.use(morgan(config.log_level));
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, ORIGIN');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
     next();
 });
 
 app.post('/login', function(req, res) {
-    User.findOne({email: req.body.email, password: req.body.password}, function(err, user) {
+  console.log("Login attempt for user "+req.body.username);
+    User.findOne({username: req.body.username, password: req.body.password}, function(err, user) {
         if (err) {
           console.log(err);
             res.status(500).end();
@@ -41,7 +42,7 @@ app.post('/login', function(req, res) {
                 }
               });
             } else {
-                console.log("Bad login: "+req.body.email);
+                console.log("Bad login: "+req.body.username);
                 res.status(403).end();
             }
         }
